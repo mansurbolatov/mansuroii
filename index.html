@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Дорога — онлайн-сервис продажи автомобилей</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header><a class="logo" href="#"><i></i>Дорога</a><nav><a href="#cars">Каталог</a><a href="#credit">Кредит</a><a href="#how">Как это работает</a></nav></header>
+
+<div class="hero">
+<h1>Купите машину, не выходя из дома</h1>
+<p>Проверенные авто с историей обслуживания. Выбор, оформление и доставка онлайн — осмотр в любой момент.</p>
+<div class="road" aria-hidden="true"></div>
+<div class="search">
+<label>Марка<select id="fBrand"><option value="">Любая</option></select></label>
+<label>Кузов<select id="fBody"><option value="">Любой</option><option value="sedan">Седан</option><option value="suv">Внедорожник</option><option value="hatch">Хэтчбек</option></select></label>
+<label>Цена до<select id="fPrice"><option value="0">Любая</option><option value="10000000">10 млн ₸</option><option value="15000000">15 млн ₸</option><option value="20000000">20 млн ₸</option><option value="25000000">25 млн ₸</option></select></label>
+<label>&nbsp;<button class="btn" id="go" type="button">Показать авто</button></label>
+</div>
+</div>
+
+<section id="cars" style="padding-top:8px">
+<h2>Каталог</h2><p class="sub" id="count"></p>
+<div class="grid" id="list"></div>
+</section>
+
+<section id="credit">
+<h2>Рассчитайте платёж</h2><p class="sub">Ставка 18% годовых. Точные условия подтвердит менеджер.</p>
+<div class="calc">
+<div class="fields">
+<label>Стоимость авто, ₸<input type="text" id="cPrice" value="12000000" inputmode="numeric"></label>
+<label>Первый взнос: <span id="vDown">20%</span><input type="range" id="cDown" min="0" max="70" value="20"></label>
+<label>Срок: <span id="vTerm">48 мес.</span><input type="range" id="cTerm" min="12" max="84" step="12" value="48"></label>
+</div>
+<div class="out"><span>Платёж в месяц</span><b id="pay">—</b><span id="over" style="opacity:.75;font-size:14px"></span></div>
+</div>
+</section>
+
+<section id="how">
+<h2>Как это работает</h2><p class="sub">Четыре шага от выбора до ключей.</p>
+<div class="steps">
+<div><h3>Выберите авто</h3><p>Фильтры по марке, кузову и бюджету. Каждая машина проверена нашими инженерами.</p></div>
+<div><h3>Оставьте заявку</h3><p>Менеджер свяжется за 15 минут и ответит на вопросы.</p></div>
+<div><h3>Осмотрите и проверьте</h3><p>Приезжайте на тест-драйв или получите видеоосмотр онлайн.</p></div>
+<div><h3>Заберите ключи</h3><p>Оформим договор и кредит за день. Можно заказать доставку.</p></div>
+</div>
+</section>
+
+<footer><span>© 2026 Дорога. Гарантия юридической чистоты и 30 дней возврата.</span><span>Алматы · +7 (700) 000-00-00</span></footer>
+</div>
+
+<dialog id="dlg">
+<form method="dialog" id="frm">
+<h3 id="dTitle">Заявка</h3>
+<label>Имя<input type="text" id="n" required></label>
+<label>Телефон<input type="tel" id="p" required placeholder="+7"></label>
+<div class="row"><button class="btn alt" value="cancel" formnovalidate>Отмена</button><button class="btn" value="ok">Отправить заявку</button></div>
+</form>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
